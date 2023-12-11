@@ -33,7 +33,7 @@ jobs:
 
       - name: Install Rust and Cargo
         run: |
-          curl https://sh.rustup.rs -sSf | sh
+          curl https://sh.rustup.rs -sSf | sh -y
 
       - name: Build site with Cargo
         run: |
