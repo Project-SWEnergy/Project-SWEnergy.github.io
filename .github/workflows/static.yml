@@ -32,14 +32,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Rust and Cargo
-        uses: actions/setup-rust@v1
-        with:
-          profile: minimal
+        run: |
+          curl https://sh.rustup.rs -sSf | sh
 
       - name: Build site with Cargo
         run: |
           cd site-build
-          cargo run -- -d ../site
+          cargo run -- -d ../site -t ../
 
       - name: Deploy to GitHub Pages
         id: deployment
