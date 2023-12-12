@@ -5,33 +5,34 @@ use std::path::PathBuf;
 const IGNORE_DIRS: [&str; 4] = [".git", ".github", "layout", "site-build"];
 
 // Copy the files and folders from the source folder to the destination folder
-pub fn copy_files(source_folder: &PathBuf, destination_folder: &PathBuf) -> io::Result<()> {
-    // Create the destination folder if it doesn't exist
-    if !destination_folder.exists() {
-        fs::create_dir_all(destination_folder)?;
-    }
+pub fn copy_files(src: &PathBuf, out: &PathBuf) -> io::Result<()> {
+    let ignore = IGNORE_DIRS
+        .iter()
+        .map(|dir| dir.to_string())
+        .chain(std::iter::once(
+            out.file_name().unwrap().to_str().unwrap().to_string(),
+        ))
+        .collect::<Vec<String>>();
 
-    // Iterate through the entries in the source folder
-    for entry in fs::read_dir(source_folder)? {
-        let entry = entry?;
-        let source_path = entry.path();
-        let file_name = source_path.file_name().unwrap_or_default();
-
-        if IGNORE_DIRS.contains(&file_name.to_str().unwrap()) {
-            continue;
-        }
-
-        // Construct the destination path by joining the destination folder with the file/directory name
-        let destination_path = destination_folder.join(&file_name);
-
-        if source_path.is_file() {
-            // If the entry is a file, copy it to the destination folder
-            fs::copy(&source_path, &destination_path)?;
-        } else if source_path.is_dir() {
-            // If the entry is a directory, recursively copy its contents
-            copy_files(&source_path, &destination_path)?;
-        }
-    }
+    dirs_walker(src)?
+        .iter()
+        .chain(std::iter::once(src))
+        .filter(|path| !ignore.contains(&path.file_name().unwrap().to_str().unwrap().to_string()))
+        .map(|path| {
+            let dest = out.join(&path.strip_prefix(src).unwrap());
+            if !dest.exists() {
+                fs::create_dir_all(&dest).unwrap();
+            }
+            path
+        })
+        .filter_map(|dirs| files_walker(dirs).ok())
+        .flatten()
+        .map(|file| {
+            let path = file.strip_prefix(src).unwrap().to_path_buf();
+            (file, out.join(path))
+        })
+        .filter_map(|(src, out)| fs::copy(src, out).ok())
+        .for_each(|_| ());
 
     Ok(())
 }
@@ -40,12 +41,12 @@ pub fn copy_files(source_folder: &PathBuf, destination_folder: &PathBuf) -> io::
 // and recursively in its subfolders
 pub fn dirs_walker(source_folder: &PathBuf) -> io::Result<Vec<PathBuf>> {
     let mut walker = fs::read_dir(source_folder)?
-        .filter(|entry| entry.is_ok())
-        .map(|entry| entry.unwrap().path())
+        .filter_map(|entry| entry.ok())
+        .map(|entry| entry.path())
         .filter(|entry| {
             entry.is_dir() && !IGNORE_DIRS.contains(&entry.file_name().unwrap().to_str().unwrap())
         })
-        .map(|dir| dir.canonicalize().unwrap())
+        .filter_map(|dir| dir.canonicalize().ok())
         .collect::<Vec<PathBuf>>();
 
     // recursively add subfolders
@@ -53,7 +54,8 @@ pub fn dirs_walker(source_folder: &PathBuf) -> io::Result<Vec<PathBuf>> {
         walker
             .clone()
             .iter()
-            .flat_map(|path| dirs_walker(&path).unwrap()),
+            .filter_map(|path| dirs_walker(&path).ok())
+            .flatten(),
     );
     Ok(walker)
 }
@@ -62,10 +64,9 @@ pub fn dirs_walker(source_folder: &PathBuf) -> io::Result<Vec<PathBuf>> {
 // and recursively its subfolders
 pub fn files_walker(source_folder: &PathBuf) -> io::Result<Vec<PathBuf>> {
     let walker = fs::read_dir(source_folder)?
-        .filter(|entry| entry.is_ok())
-        .map(|entry| entry.unwrap().path())
-        .filter(|path| path.is_file())
-        .map(|path| path.canonicalize().unwrap())
+        .filter_map(|entry| entry.ok())
+        .filter(|entry| entry.path().is_file())
+        .filter_map(|entry| entry.path().canonicalize().ok())
         .collect::<Vec<PathBuf>>();
     Ok(walker)
 }

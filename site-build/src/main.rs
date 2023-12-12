@@ -31,16 +31,18 @@ fn main() -> io::Result<()> {
         }
     };
 
+    println!("out: {:?}", src.file_name().unwrap());
+
+    // set the current directory to the destination directory
     match std::env::set_current_dir(&out) {
         Ok(_) => println!("Current directory changed successfully!"),
         Err(e) => eprintln!("Error changing current directory: {}", e),
     }
 
+    // directory out is the current directory
     dirs_walker(&PathBuf::from("./"))?
         .iter()
-        .map(|path| files_walker(path))
-        .filter(|files| files.is_ok())
-        .map(|files| files.unwrap())
+        .filter_map(|path| files_walker(path).ok())
         .flatten()
         .filter(|path| path.extension().unwrap_or_default() == "md")
         .map(|path| path.strip_prefix(&out).unwrap().to_path_buf())
@@ -54,7 +56,7 @@ fn main() -> io::Result<()> {
 
 fn get_input() -> Result<(PathBuf, PathBuf), io::Error> {
     let mut src = "../";
-    let mut out = "./site";
+    let mut out = "../site";
 
     let args = env::args().collect::<Vec<_>>();
     let mut args_iter = args[1..].iter();
