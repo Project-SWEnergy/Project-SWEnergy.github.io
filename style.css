@@ -1,16 +1,30 @@
 /* style.css */
+
+html {
+  font-size: 18px;
+}
+
+:root {
+	/* define some variables to use later */
+	--bg-color: #2d323cff;
+	--text-color: whitesmoke;
+	--text-bg-color: #191919;
+	--link-color: #ce9ffe;
+	--link-hover-color: #9c01c6;
+	--link-visited-color: #9c01c6;
+}
+
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #2d323cff;
+  background-color: var(--bg-color);
 }
 
 header {
-  background-color: #191919;
-  color: #fff;
+  background-color: var(--text-bg-color);
   text-align: center;
-  padding: 10px 0;
+  padding: 1rem 0;
 }
 
 nav {
@@ -20,7 +34,7 @@ nav {
 }
 
 #logo img {
-  width: 300px;
+  width: 15rem;
   height: auto;
   opacity: 0.9;
 }
@@ -28,94 +42,104 @@ nav {
 nav ul {
   list-style-type: none;
   font-weight: bold;
-  text-decoration: none;
   display: flex;
-  margin-top: 10px;
   transition: color 0.2s;
 }
 
-nav ul li {
-  font-size: 1.2em;
-  color: #ce9ffe;
+nav ul li a {
+	font-size: 1.2rem;
+  border-radius: 2rem;
+  padding: 1rem;
+  color: var(--link-color);
   text-decoration: none;
 }
 
-nav ul li a {
-  border-radius: 2em;
-  padding: 1rem;
-  color: #ce9ffe;
-  text-decoration: none;
+nav ul li a:visited {
+  color: var(--link-color);
 }
 
 nav ul li a:hover {
-  color: #9c01c6;
+  color: var(--link-hover-color);
 }
 
 main {
-  padding: 20px;
+  padding: 2rem;
   text-align: center;
 }
 
 section {
-  background-color: #191919;
+  background-color: var(--text-bg-color);
   /* border: 1px solid #ddd;*/
-  border-radius: 10px;
-  padding: 20px 30px;
+  border-radius: 1rem;
+  padding: 1rem 3rem 3rem 3rem;
   margin: 0 auto;
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
-  max-width: 50%;
-  margin-bottom: 20px;
+  max-width: 70%;
+  margin-bottom: 1rem;
   text-align: left; /* Allinea il testo a sinistra all'interno del box */
-  color: whitesmoke;
+  color: var(--text-color);
+  line-height: 1.5;
 }
 
 h1 {
-  color: whitesmoke;
-  font-size: 3rem;
-}
-h2 {
-  color: whitesmoke;
   font-size: 2rem;
 }
-h3 {
-  color: whitesmoke;
-  font-size: 1.5rem;
-}
 
-section ul li {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: whitesmoke;
+h2 {
+  font-size: 1.5;
+}
+h3 {
+  font-size: 1.2rem;
 }
 
 p {
   font-size: 1rem;
-  line-height: 1.5;
-  color: whitesmoke;
+}
+
+a {
+  color: var(--link-color);
 }
 
 /* Aggiungi stile per la classe "indented" */
-.indented {
-  margin-left: 20px; /* Aggiunge uno spazio a sinistra per l'indentazione */
-}
 
-section h1 {
+h1 {
   text-align: center;
 }
 
-.link{
-  display: block;
-  margin-top: 10px;
-  color: #ce9ffe;
-  transition: color 0.2s;
-  text-decoration: none;
+a:hover {
+  color: var(--link-visited-color);
 }
 
-.link:hover{
-  color: #9c01c6;
+a:visited {
+  color: var(--link-visited-color);
 }
 
-.bold{
-  font-weight: bold;
+ul li, ol li {
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
+ul li a, ol li a {
+	font-size: 1rem;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 0.2rem;
+  margin: 0 auto;
+}
+
+table thead {
+	border-bottom: 1px solid var(--text-color);
+}
+
+table th, table td {
+  padding: 0.3rem 1rem;
+}
+
+code {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+}
