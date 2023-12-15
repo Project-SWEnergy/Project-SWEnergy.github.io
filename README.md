@@ -1,7 +1,7 @@
 # Candidatura
-- [Lettera di presentazione_v1.0.0](Candidatura/Lettera di presentazione.pdf)
-- [Presentazione costi e assunzione impegni_v2.0.0](Candidatura/Presentazione costi e assunzione impegni.pdf)
-- [Valutazione capitolati_v2.0.0](Candidatura/Valutazione capitolati.pdf)
+- [Lettera di presentazione_v1.0.0](<Candidatura/Lettera di presentazione.pdf>)
+- [Presentazione costi e assunzione impegni_v2.0.0](<Candidatura/Presentazione costi e assunzione impegni.pdf>)
+- [Valutazione capitolati_v2.0.0](<Candidatura/Valutazione capitolati.pdf>)
 
 ## Verbali
 
@@ -14,9 +14,9 @@
 - [Verbale interno 2023-11-06_I](Candidatura/Verbali/Interni/2023-11-06_I.pdf)
 
 ### Esterni
-- [Verbale esterno 2023_10_24 Sanmarco Informatica](Candidatura/Verbali/Esterni/2023-10-24 Sanmarco.pdf)
-- [Verbale esterno 2023_10_25 AzzurroDigitale](Candidatura/Verbali/Esterni/2023-10-25 AzzurroDigitale.pdf)
-- [Verbale esterno 2023_10_27 Imola Informatica](Candidatura/Verbali/Esterni/2023-10-27 Imola Informatica.pdf)
+- [Verbale esterno 2023_10_24 Sanmarco Informatica](<Candidatura/Verbali/Esterni/2023-10-24 Sanmarco.pdf>)
+- [Verbale esterno 2023_10_25 AzzurroDigitale](<Candidatura/Verbali/Esterni/2023-10-25 AzzurroDigitale.pdf>)
+- [Verbale esterno 2023_10_27 Imola Informatica](<Candidatura/Verbali/Esterni/2023-10-27 Imola Informatica.pdf>)
 
 ### Documenti ad uso interno
 - [Way of working_v1.0.0](Candidatura/Way of Working.pdf)
