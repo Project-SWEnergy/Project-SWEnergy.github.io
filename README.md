@@ -19,7 +19,7 @@
 - [Verbale esterno 2023_10_27 Imola Informatica](<Candidatura/Verbali/Esterni/2023-10-27 Imola Informatica.pdf>)
 
 ### Documenti ad uso interno
-- [Way of working_v1.0.0](Candidatura/Way of Working.pdf)
+- [Way of working_v1.0.0](<Candidatura/Way of Working.pdf>)
 
 ---
 
