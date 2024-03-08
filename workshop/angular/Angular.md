@@ -1,4 +1,4 @@
-# Intro
+# Angular
 
 Requisiti:
 - Node.js -> npm incluso in Node.js
@@ -23,7 +23,7 @@ Installiamo anche TypeScript globalmente con il comando:
 
 	npm install -g typescript
 
-Se si vogliono effettuare test per chiamate HTTP seguire la procedura di installazione di [[HTTP]].
+Se si vogliono effettuare test per chiamate HTTP seguire la procedura di installazione di [HTTP](workshop/angular/HTTP.html).
 
 
 ## Creazione nuovo progetto:
@@ -34,14 +34,13 @@ Se si vogliono effettuare test per chiamate HTTP seguire la procedura di install
 Il comando crea una applicazione di default.
 
 Selezionare CSS ed accettare (?) il Server Side Rendering.
-[#todo]
 
 
 ## Compilazione
 
 Se si è scaricato un progetto esistente da git sarà necessario installare tutte le dependencies necessarie, già descritte nel pacchetto scaricato, per farlo usiamo il seguente comando all'intenro della cartella in cui è stato estratto il pacchetto:
 
-	npt install
+	npm install
 
 Se si dispone di TypeScript installato correttamente è possibile compilare tutti i file ts in file js dopo averli modificati, per farlo si usa il comando:
 
@@ -71,6 +70,6 @@ Ci si collega al sito tramite http://localhost:4200.
 Da VSCode aprire un nuovo terminale per eseguire altri comandi e visualizzare le modifiche in realtime.
 
 
-# Successivo
-- Per informazioni sul linguaggio continua su [[TypeScript]].
-- Per continuare con Angular [[Componenti]]
+## Successivo
+- Per informazioni sul linguaggio continua su [TypeScript](workshop/angular/TypeScript.html).
+- Per continuare con Angular [Componenti](workshop/angular/Componenti.html).

@@ -1,8 +1,9 @@
+# Componenti
 Utilizzate per creare interfacce utente modulari e riutilizzabili. 
 Ogni componente rappresenta una parte specifica dell'interfaccia utente o della logica dell'applicazione.
 
 
-# Descrizione
+## Descrizione
 
 Un esempio è quello principale in *app.component.ts*:
 
@@ -20,7 +21,7 @@ Un esempio è quello principale in *app.component.ts*:
 - **templateUrl**: Percorso del file HTML che contiene il template della componente. Il template è la struttura visiva della componente.
 - **styleUrls**: Array di percorsi per i file di stile CSS associati a questa componente. Gli stili definiti qui saranno applicati solo alla componente corrente.
 
-# Creazione
+## Creazione
 
 Creo la componente *product-list* che conterrà una lista di prodotti.
 
@@ -41,5 +42,5 @@ Mentre nel decorator *@Component* la inseriamo negli import:
 Di default queste componenti sono definite "Standalone" in quanto non necessitano di moduli per il loro funzionamento.
 
 
-# Successivo
-[[Interfacce]]
+## Successivo
+[Interfacce](workshop/angular/Interfacce.html)

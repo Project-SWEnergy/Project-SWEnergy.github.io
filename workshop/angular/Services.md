@@ -1,3 +1,4 @@
+# Servizi
 Sono oggetti che permettono di organizzare e condividere la logica di business, i dati o le funzionalità tra diverse parti di un'applicazione.
 Possono gestire la logica di accesso ai dati, la comunicazione con i server, la gestione dello stato dell'applicazione, 
 Le caratteristiche sono:
@@ -5,7 +6,7 @@ Le caratteristiche sono:
 - **Dependency Injection**: si forniscono i servizi alle componenti che ne hanno bisogno, le dipendenze vengono iniettate nelle classi che le richiedono, anziché essere create al loro interno. Per utilizzare un servizio in una componente Angular, è sufficiente dichiarare il servizio come dipendenza nel costruttore della componente. 
 - **Riutilizzabilità del Codice**: i servizi in Angular possono essere facilmente riutilizzati in diverse parti dell'applicazione.
 
-# Creazione
+## Creazione
 
 Genero un servizio di nome "housing":
 
@@ -72,7 +73,7 @@ Il servizio contiene due metodi:
 - **getHousingLocationById(id: number)**: restituisce la posizione di alloggio con l'id specificato, o undefined se non trovata.
 
 
-# Utilizzo
+## Utilizzo
 
 Andiamo ora a modificare la componente Home. 
 Importiamo sia *inject* che *HousingService* e cancelliamo tutti i dati precedentemente presenti nell'array *housingLocationList*
@@ -100,5 +101,5 @@ All'interno del costruttore della componente possiamo quindi invocare i metodi d
 	  }
 	}
 
-# Successivo
-[[Forms]]
+## Successivo
+[Forms](workshop/angular/Forms.html).

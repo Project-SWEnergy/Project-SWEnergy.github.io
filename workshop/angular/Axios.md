@@ -1,10 +1,12 @@
-# Installazione
+# Axios
+
+## Installazione
 Da riga di comando:
 
 	npm install axios
 
 
-# Configurazione
+## Configurazione
 Si genera un file "axios-config.ts" con il seguente contenuto:
 
 	import axios from 'axios';
@@ -20,7 +22,7 @@ Si genera un file "axios-config.ts" con il seguente contenuto:
 	export default instance;
 
 
-# Utilizzo
+## Utilizzo
 Viene utilizzato all'interno dei servizi come segue:
 
 	import { Injectable } from '@angular/core';

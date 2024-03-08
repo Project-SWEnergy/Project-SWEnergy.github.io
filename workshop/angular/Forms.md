@@ -1,4 +1,5 @@
-# Creazione
+# Forms
+## Creazione
 Selezioniamo il componente su cui verrà visualizzato il form.
 Importiamo i moduli necessari all'utilizzo dei form e creiamo una variabile di tipo *FormGroup*.
 
@@ -126,7 +127,7 @@ Si può abilitare o disabilitare dinamicamente il controllo.
 	controlloNome.disable();
 
 
-# Invio di dati
+## Invio di dati
 Nel corpo della classe della componente che ospita il form dobbiamo definire la funzione *submitApplication*, descritta in [[#Creazione]].
 
 	submitApplication() {
@@ -137,7 +138,7 @@ Nel corpo della classe della componente che ospita il form dobbiamo definire la 
 	    )
 	  }
 
-Questa funzione richiama il servizio definito in [[Services]] che dovrà essere esteso per comprendere la funzione *submitApplication*.
+Questa funzione richiama il servizio definito in [Services](workshop/angular/Services.html) che dovrà essere esteso per comprendere la funzione *submitApplication*.
 
-# Successivo
-[[HTTP]]
+## Successivo
+[HTTP](workshop/angular/HTTP.html)

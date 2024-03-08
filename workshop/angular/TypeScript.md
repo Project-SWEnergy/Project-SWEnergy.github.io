@@ -1,25 +1,4 @@
-[[#Tipi e variabili]]
-	- [[#Dichiarazione]]
-	- [[#Tipi]]
-
-[[#Funzioni]]
-	- [[#Parametri]]
-	- [[#Arrow functions (lambda)]]
-	
-[[#Caratteristiche]]
-	- [[#Spread parameter]]
-	- [[#Template string]]
-	- [[#Generics]]
-
-[[#Classi, interfacce, decorators]]
-	- [[#Classi]]
-	- [[#Interfacce]]
-	- [[#Ereditarietà]]
-	- [[#Decorators]]
-
-[[#Tipi avanzati]]
-[[#Successivo]]
-
+# TypeScript
 Superset di JavaScript, permette di:
 - Utilizzare i tipi migliorando la comprensione del codice e la sua integrazione con moduli differenti.
 - Analizzare i tipi permette di rilevare errori in fase di compilazione.
@@ -449,4 +428,4 @@ Nel seguente esempio la variabile *powers* accetta sia un array di numeri che un
 
 
 # Successivo
-Continua con Angular su [[Componenti]]
+Continua con Angular su [Componenti](workshop/angular/Componenti.html)

@@ -1,3 +1,4 @@
+# Interfacce
 Definiscono la struttura dei dati che verranno inviati e visualizzati
 
 	ng generate interface interfacce/HousingLocation
@@ -61,5 +62,5 @@ In questo caso stiamo iterando sull'array *housingLocationList* e assegnando ogn
 Questo è un binding di input. Stiamo passando il valore corrente dell'iterazione al componente app-housing-location come input con il nome housingLocation.
 Questo codice crea dinamicamente un'istanza del componente *app-housing-location* per ogni elemento nell'array *housingLocationList*, passando l'oggetto corrispondente come input al componente. 
 
-# Successivo
-[[Routing]]
+## Successivo
+[Routing](workshop/angular/Routing.html)

@@ -1,9 +1,10 @@
+# Routing
 Gestisce la navigazione tra componenti.
 Consente di definire percorsi per diverse viste e di mappare queste viste a determinati URL. 
 Ciò significa che quando un utente cambia l'URL o esegue un'azione che dovrebbe portarlo a una vista diversa, l'applicazione Angular può rispondere navigando in modo appropriato senza dover ricaricare l'intera pagina.
 
-# Creazione
-## Modulo
+## Creazione
+### Modulo
 
 Per utilizzarlo è necessario abilitarlo, il tutorial dice di inserire la componente dentro *main.ts*, tuttavia dovrebbe essere già abilitato all'interno del file *appConfig* in esso incluso:
 
@@ -15,7 +16,7 @@ Per utilizzarlo è necessario abilitarlo, il tutorial dice di inserire la compon
 	  providers: [provideRouter(routes)]
 	};
 
-## Routes
+### Routes
 
 Nel file *app.routes.ts* è importante definire il parametro *Routes* (anche questo definito in automatico).
 Le routes definiscono la mappatura tra un percorso URL e un componente specifico. 
@@ -37,7 +38,7 @@ Ora vogliamo inserire i dati relativi a quanto fatto fino ad ora nel tutorial, l
 	    }
 	];
 
-## RouterOutlet
+### RouterOutlet
 
 Un'applicazione Angular deve includere un < router-outlet > nel suo template principale. Questo è il punto in cui le viste corrispondenti ai percorsi specificati vengono visualizzate dinamicamente.
 Dal file *app.component.ts* importiamo il modulo *RouterModule* da *@angular/router*.
@@ -78,7 +79,7 @@ Modifichiamo ora il file *app.component.html* inserendo il tag relativo al routi
 
 Deve essere ben definito il routing della sezione [[#Routes]]
 
-## Router Link
+### Router Link
 
 Creo un componente chiamato *details* che dovrà apparire alla selezione di una delle cards presenti nel progetto.
 Aggiungiamo in *app.routing.ts* la componente tramite import e la definiamo così come è stata definita la Home:
@@ -143,7 +144,7 @@ Occorre però modificare anche la pagina di routing, indicheremo con i : un plac
 	    }
 	];
 
-## Inject
+### Inject
 
 Ora che abbiamo aperto un dettaglio della card occorre poter ricevere nella componente il parametro inviato nell' url (l'ID).
 Modifichiamo la componente di dettaglio inserendo i moduli necessari a ricevere i dati e creando il costruttore della componente in modo che recepisca il valore e lo assegni alla variabile:
@@ -167,5 +168,5 @@ Modifichiamo la componente di dettaglio inserendo i moduli necessari a ricevere 
 	  }
 	}
 
-# Successivo
-[[Services]]
+## Successivo
+[Services](workshop/angular/Services.html).

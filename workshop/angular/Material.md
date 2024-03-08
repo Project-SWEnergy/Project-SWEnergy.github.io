@@ -1,4 +1,5 @@
-# Installazione
+# Material
+## Installazione
 
 Utilizzare il comando per aggiungere le componenti richieste:
 
@@ -12,7 +13,7 @@ Il comando effettuerà le seguenti modifiche:
 - Inserimento stile CSS globale
 
 
-# Utilizzo
+## Utilizzo
 
 Il modulo che si vuole utilizzare deve essere importato, fare riferimento a https://material.angular.io/components/categories per informazioni più dettagliate
 

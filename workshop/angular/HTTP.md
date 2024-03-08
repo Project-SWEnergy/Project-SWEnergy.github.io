@@ -1,4 +1,5 @@
-# Installazione per test
+# HTTP
+## Installazione per test
 
 Per i test installiamo un server locale che possa contenere JSON:
 
@@ -81,9 +82,9 @@ Avviamo il server utilizzando i dati appena caricati:
 	json-server --watch db.json
 
 
-# Utilizzo
+## Utilizzo
 
-Si utilizza il servizio creato in [[Services]] e si crea la variabile contenente l'url su cui si effettueranno le richieste, se si sta usando quello locale creato in [[#Installazione per test]] allora la variabile sarà:
+Si utilizza il servizio creato in [Services](workshop/angular/Services.html) e si crea la variabile contenente l'url su cui si effettueranno le richieste, se si sta usando quello locale creato in [[#Installazione per test]] allora la variabile sarà:
 
 	url : string  = 'http://localhost:3000/locations'
 
@@ -119,7 +120,7 @@ Modifichiamo il costruttore di details.component:
       });
 	}
 
-# Variabili template
+## Variabili template
 
 Precedute dal simbolo # in HTML.
 
