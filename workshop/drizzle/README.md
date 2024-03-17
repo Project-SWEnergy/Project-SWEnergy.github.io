@@ -126,4 +126,4 @@ import { eq } from 'drizzle-orm'; // per importare i metodi per le query
 ```
 
 In ogni caso, per studiare la scrittura delle query si fa riferimento alla
-pagina di drizzle: [drizzle queries](https://orm.drizzle.team/docs/queries)
+pagina di drizzle: [drizzle queries](https://orm.drizzle.team/docs/rqb)
