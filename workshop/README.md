@@ -12,6 +12,7 @@ Di seguito ci sono i tre workshop sviluppati:
 - [docker](workshop/docker)
 - [nestjs](workshop/nestjs)
 - [angular](workshop/angular)
+- [drizzle](workshop/drizzle)
 
 ## Come funziona la github action?
 
